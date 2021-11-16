@@ -17,13 +17,12 @@ class MoneyTransferTest {
 
     @BeforeEach
     void setup() {
-        Configuration.browser = "chrome";
-        open("http://localhost:9999");
     }
 
     @Test
     void shouldTransferMoneyBetweenOwnCards() {
         int amount = 1000;
+        open("http://localhost:9999");
         val loginPage = new LoginPage();
         val authInfo = DataHelper.getAuthInfo();
         val verificationPage = loginPage.validLogin(authInfo);
